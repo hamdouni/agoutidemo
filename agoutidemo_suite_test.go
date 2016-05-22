@@ -23,17 +23,16 @@ var appURL string
 
 var _ = BeforeSuite(func() {
 	// Choose a WebDriver:
-
 	agoutiDriver = agouti.PhantomJS()
 	// agoutiDriver = agouti.Selenium()
 	// agoutiDriver = agouti.ChromeDriver()
 
 	Expect(agoutiDriver.Start()).To(Succeed())
 
+    // Before begining tne suite, we launch the application
 	appPort = 9999
 	appURL = "http://localhost:" + strconv.Itoa(appPort)
 	go StartApp(appPort)
-
 })
 
 var _ = AfterSuite(func() {

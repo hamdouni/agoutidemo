@@ -20,7 +20,7 @@ var _ = Describe("UserLogin", func() {
 		Expect(page.Destroy()).To(Succeed())
 	})
 
-	It("does some tests", func() {
+	It("does some static stuff", func() {
 		By("showing index", func() {
 			Expect(page.Navigate(appURL)).To(Succeed())
 			Expect(page).Should(HaveTitle("AGOUTI DEMO"))
@@ -30,7 +30,7 @@ var _ = Describe("UserLogin", func() {
 			Expect(page).To(HaveTitle("THE END"))
 		})
 	})
-	It("does some dynamic stuff", func() {
+	It("does some pseudo dynamic stuff", func() {
 		By("loging in", func() {
 			Expect(page.Navigate(appURL)).To(Succeed())
 			Expect(page.Find("#userid").Fill("username")).To(Succeed())
